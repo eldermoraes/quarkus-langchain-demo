@@ -1,0 +1,1 @@
+# quarkus-langchain-demo

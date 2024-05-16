@@ -1,56 +1,25 @@
 package com.redhat.developers.embedding;
 
-import java.io.IOException;
-import java.io.UncheckedIOException;
+import jakarta.websocket.OnOpen;
+import io.quarkus.websockets.next.OnTextMessage;
+import io.quarkus.websockets.next.WebSocket;
 
-import jakarta.websocket.OnClose;
-import jakarta.websocket.OnMessage;
-import jakarta.websocket.Session;
-import jakarta.websocket.server.ServerEndpoint;
-
-import org.eclipse.microprofile.context.ManagedExecutor;
-import org.jboss.logging.Logger;
-
-import io.quarkiverse.langchain4j.ChatMemoryRemover;
-
-@ServerEndpoint(value = "/chat")
+@WebSocket(path = "/chat")
 public class ChatSocket {
 
-    private static final Logger LOG = Logger.getLogger(ChatSocket.class);
-
     private final AssistantForCustomerSupport assistant;
-    private final ManagedExecutor managedExecutor;
 
-    public ChatSocket(AssistantForCustomerSupport assistant, ManagedExecutor managedExecutor) {
+    public ChatSocket(AssistantForCustomerSupport assistant) {
         this.assistant = assistant;
-        this.managedExecutor = managedExecutor;
     }
 
-    @OnMessage
-    public void onMessage(Session session, String userMessage) throws Exception {
-        if (userMessage.equalsIgnoreCase("_ready_")) {
-            return;
-        }
-
-        // we need to use a worker thread because OnMessage always runs on the event loop
-        managedExecutor.submit(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    session.getBasicRemote().sendText("[User]: " + userMessage);
-                    session.getBasicRemote().sendText("[Assistant]: " + assistant.chat(session, userMessage));
-                } catch (IOException e) {
-                    throw new UncheckedIOException(e);
-                } catch (Exception e) {
-                    LOG.error(e);
-                }
-            }
-        });
+    @OnOpen
+    public String onOpen() {
+        return "Hello from Miles of Smiles, how can we help you?";
     }
 
-    @OnClose
-    void onClose(Session session) {
-        ChatMemoryRemover.remove(assistant, session);
+    @OnTextMessage
+    public String onMessage(String userMessage){
+        return assistant.chat(userMessage);
     }
-
 }

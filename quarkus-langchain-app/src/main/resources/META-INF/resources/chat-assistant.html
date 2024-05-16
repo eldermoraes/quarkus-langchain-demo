@@ -13,6 +13,7 @@
             overflow: hidden;
             min-height: 300px;
             max-height: 300px;
+            overflow-y: scroll;
         }
     </style>
 </head>
@@ -71,17 +72,18 @@
     var connect = function() {
         if (! connected) {
             socket = new WebSocket("ws://" + location.host + "/chat");
-            socket.onopen = function() {
+            socket.onopen = function(m) {
                 connected = true;
                 console.log("Connected to the web socket");
                 $("#send").attr("disabled", false);
                 $("#connect").attr("disabled", true);
                 $("#name").attr("disabled", true);
+                $("#chat").append("[Assistant] Hi from Miles of Smiles, how may I help you? \n");
                 $("#msg").focus();
             };
             socket.onmessage =function(m) {
                 console.log("Got message: " + m.data);
-                $("#chat").append(m.data + "\n");
+                $("#chat").append("[Assistant] " + m.data + "\n");
                 scrollToBottom();
             };
         }
@@ -91,6 +93,7 @@
         if (connected) {
             var value = $("#msg").val();
             console.log("Sending " + value);
+            $("#chat").append("[You] " + value + "\n")
             socket.send(value);
             $("#msg").val("");
         }

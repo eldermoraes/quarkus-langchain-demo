@@ -1,8 +1,7 @@
 package com.redhat.developers.embedding;
 
-import jakarta.inject.Singleton;
-
 import dev.langchain4j.agent.tool.Tool;
+import jakarta.inject.Singleton;
 
 @Singleton
 public class BookingTools {

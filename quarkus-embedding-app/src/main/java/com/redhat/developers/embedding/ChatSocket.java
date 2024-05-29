@@ -1,8 +1,8 @@
 package com.redhat.developers.embedding;
 
-import jakarta.websocket.OnOpen;
 import io.quarkus.websockets.next.OnTextMessage;
 import io.quarkus.websockets.next.WebSocket;
+import jakarta.websocket.OnOpen;
 
 @WebSocket(path = "/chat")
 public class ChatSocket {

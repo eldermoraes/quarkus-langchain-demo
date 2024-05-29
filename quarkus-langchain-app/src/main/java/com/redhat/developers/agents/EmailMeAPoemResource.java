@@ -15,7 +15,7 @@ public class EmailMeAPoemResource {
 
     @GET
     public String emailMeAPoem() {
-        return service.writeAPoem("Quarkus", 4);
+        return service.writeAPoem("LLM e Java", 4);
     }
 
 }

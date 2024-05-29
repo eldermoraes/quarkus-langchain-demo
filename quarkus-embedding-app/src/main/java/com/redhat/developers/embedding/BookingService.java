@@ -1,9 +1,9 @@
 package com.redhat.developers.embedding;
 
-import java.time.LocalDate;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import java.time.LocalDate;
 
 @ApplicationScoped
 public class BookingService {

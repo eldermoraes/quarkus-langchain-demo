@@ -1,6 +1,5 @@
-package com.redhat.developers.agents;
+package com.redhat.developers.tools;
 
-import com.redhat.developers.agents.EmailService;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;

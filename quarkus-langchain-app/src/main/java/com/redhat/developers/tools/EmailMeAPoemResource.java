@@ -1,8 +1,8 @@
-package com.redhat.developers.agents;
+package com.redhat.developers.tools;
 
-import com.redhat.developers.agents.AssistantWithContext;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.QueryParam;
 
 @Path("/email-me-a-poem")
 public class EmailMeAPoemResource {
@@ -14,8 +14,10 @@ public class EmailMeAPoemResource {
     }
 
     @GET
-    public String emailMeAPoem() {
-        return service.writeAPoem("LLM e Java", 4);
+    public String emailMeAPoem(@QueryParam("topic") String topic,
+                               @QueryParam("lines") int lines) {
+
+        return service.writeAPoem(topic, lines);
     }
 
 }

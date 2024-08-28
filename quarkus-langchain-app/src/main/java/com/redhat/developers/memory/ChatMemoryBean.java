@@ -1,4 +1,4 @@
-package com.redhat.developers.chainmemory;
+package com.redhat.developers.memory;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

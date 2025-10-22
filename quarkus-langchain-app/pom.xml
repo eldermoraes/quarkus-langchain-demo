@@ -63,13 +63,13 @@
       <artifactId>quarkus-smallrye-openapi</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.quarkiverse.langchain4j</groupId>
-      <artifactId>quarkus-langchain4j-openai</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.quarkiverse.mailpit</groupId>
       <artifactId>quarkus-mailpit</artifactId>
       <version>1.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkiverse.langchain4j</groupId>
+      <artifactId>quarkus-langchain4j-ollama</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>

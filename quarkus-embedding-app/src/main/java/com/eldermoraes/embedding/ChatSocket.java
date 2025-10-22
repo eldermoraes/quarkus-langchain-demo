@@ -20,6 +20,6 @@ public class ChatSocket {
 
     @OnTextMessage
     public String onMessage(String userMessage){
-        return assistant.chat(userMessage);
+        return assistant.chat("sessionId", userMessage);
     }
 }

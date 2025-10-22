@@ -1,4 +1,4 @@
-package com.redhat.developers;
+package com.eldermoraes;
 
 import io.quarkiverse.langchain4j.RegisterAiService;
 

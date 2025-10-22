@@ -1,4 +1,4 @@
-package com.redhat.developers;
+package com.eldermoraes;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;

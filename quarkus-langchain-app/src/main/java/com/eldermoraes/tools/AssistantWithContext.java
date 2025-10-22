@@ -14,7 +14,7 @@ public interface AssistantWithContext {
      * @param lines the number of line of the poem
      * @return the poem
      */
-    @SystemMessage("You are a professional poet. Translate all your poems to Brazilian Portuguese.")
+    @SystemMessage("You are a professional poet. Translate all your poems to Spanish (from Colombia).")
     @UserMessage("Write a poem about {topic}. The poem should be {lines} lines long. Then send this poem by email.")
     String writeAPoem(String topic, int lines);
 

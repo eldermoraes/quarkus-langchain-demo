@@ -1,4 +1,4 @@
-package com.redhat.developers.embedding;
+package com.eldermoraes.embedding;
 
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;

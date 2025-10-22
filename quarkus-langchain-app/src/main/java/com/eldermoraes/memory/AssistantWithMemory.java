@@ -1,4 +1,4 @@
-package com.redhat.developers.memory;
+package com.eldermoraes.memory;
 
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.UserMessage;

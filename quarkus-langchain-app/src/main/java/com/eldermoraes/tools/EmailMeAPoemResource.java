@@ -1,4 +1,4 @@
-package com.redhat.developers.tools;
+package com.eldermoraes.tools;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

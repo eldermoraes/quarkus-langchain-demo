@@ -1,4 +1,4 @@
-package com.redhat.developers.memory;
+package com.eldermoraes.memory;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

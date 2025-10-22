@@ -1,4 +1,4 @@
-package com.redhat.developers.prompts;
+package com.eldermoraes.prompts;
 
 import io.quarkiverse.langchain4j.RegisterAiService;
 

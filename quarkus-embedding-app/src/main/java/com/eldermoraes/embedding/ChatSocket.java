@@ -1,4 +1,4 @@
-package com.redhat.developers.embedding;
+package com.eldermoraes.embedding;
 
 import io.quarkus.websockets.next.OnTextMessage;
 import io.quarkus.websockets.next.WebSocket;

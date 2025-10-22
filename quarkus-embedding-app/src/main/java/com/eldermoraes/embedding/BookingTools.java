@@ -1,4 +1,4 @@
-package com.redhat.developers.embedding;
+package com.eldermoraes.embedding;
 
 import dev.langchain4j.agent.tool.Tool;
 import jakarta.inject.Singleton;

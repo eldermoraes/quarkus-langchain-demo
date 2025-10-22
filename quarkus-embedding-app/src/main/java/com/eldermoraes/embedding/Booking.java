@@ -1,4 +1,4 @@
-package com.redhat.developers.embedding;
+package com.eldermoraes.embedding;
 
 import java.time.LocalDate;
 

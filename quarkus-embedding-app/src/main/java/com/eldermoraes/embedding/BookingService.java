@@ -1,4 +1,4 @@
-package com.redhat.developers.embedding;
+package com.eldermoraes.embedding;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.config.inject.ConfigProperty;

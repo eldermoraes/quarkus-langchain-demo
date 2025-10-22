@@ -1,4 +1,4 @@
-package com.redhat.developers.prompts;
+package com.eldermoraes.prompts;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -16,6 +16,7 @@ public class PromptResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String prompt(@QueryParam("message") String message) {
+
         return assistant.chat(message);
     }
 }
